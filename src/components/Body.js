@@ -6,20 +6,22 @@ import {useState,useEffect} from "react";
 
 const Body = () =>{
     // local state variable
-    const [listOfRestaurants, setListOfRestaurant] = useState(resObj);
+    const [listOfRestaurants, setListOfRestaurant] = useState([]);
 
-    // useEffect(() =>{
+    useEffect(() =>{
         // fetch data from API
-    //     fetchData();
-    // },[]);
+        fetchData();
+    },[]);
 
-    // const fetchData = async () =>{
-    //     const data = await fetch(
-    //         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.01750&lng=73.31930&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    //     )
-    //     const json = data.json();
-    //     console.log(json);
-    // }
+    const fetchData = async () =>{
+        const data = await fetch(
+            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.213005082226353&lng=77.39667668938637&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        );
+        const json = await data.json();
+        // console.log(json);
+        // optional chaining
+        setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    }
 
     return (
       <div className="body">
