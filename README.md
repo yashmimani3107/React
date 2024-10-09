@@ -9,6 +9,8 @@ Top-rated Restaurants:
 Search and Filters
 Cart Management
 
+create browser router -> react-router-dom
+
 
 # Parcel
 - Dev Build
