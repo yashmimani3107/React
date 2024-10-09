@@ -1,5 +1,15 @@
 # Namaste React Learnings
 
+# Food ordering App
+
+Swiggy API Integration
+React-based UI
+Shimmer Effect
+Top-rated Restaurants:
+Search and Filters
+Cart Management
+
+
 # Parcel
 - Dev Build
 - Local Server
@@ -18,7 +28,7 @@
 - Tree Shaking - remove unused code  
 - Different bulid for dev and prod
 
-# Food ordering App
+
 
 # Two Types of export
 

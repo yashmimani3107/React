@@ -1,12 +1,15 @@
 import RestaurantCard from "./RestaurantCard";
 import resObj from "../utils/mockData";
 import {useState,useEffect} from "react";
+import Shimmer from "./Shimmer";
 
 
 
 const Body = () =>{
     // local state variable
     const [listOfRestaurants, setListOfRestaurant] = useState([]);
+    const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+    const [searchText , setSearchText] = useState("");
 
     useEffect(() =>{
         // fetch data from API
@@ -21,11 +24,32 @@ const Body = () =>{
         // console.log(json);
         // optional chaining
         setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    }
+
+    if(listOfRestaurants.length === 0){
+      return <Shimmer/>
     }
 
     return (
       <div className="body">
         <div className="filter"> 
+          <div className="search">
+            <input type="text"className="search-box" value={searchText} onChange={ (e) => {setSearchText(e.target.value)}} ></input>
+            <button
+  onClick={() => {
+    // filter
+    const filteredRestaurant = listOfRestaurants.filter((res) => {
+      return res.info.name.toLowerCase().includes(searchText.toLowerCase());
+    });
+
+    setFilteredRestaurant(filteredRestaurant);
+  }}
+>
+  Search
+</button>
+
+          </div>
             <button className="filter-btn" 
             onClick={()=>{
                 const filteredList = listOfRestaurants.filter(
@@ -35,7 +59,7 @@ const Body = () =>{
             }}>Top Rated Restaurant</button>
         </div>
         <div className="res-container">
-        {listOfRestaurants.map((restaurant) => (
+        {filteredRestaurant.map((restaurant) => (
           <RestaurantCard  key = {restaurant.info.id} resData={restaurant.info} />
         ))}
           
