@@ -2,14 +2,20 @@
 
 # Food ordering App
 
-Swiggy API Integration
-React-based UI
-Shimmer Effect
-Top-rated Restaurants:
-Search and Filters
-Cart Management
+-Swiggy API Integration
+-React-based UI
+-Shimmer Effect
+-Top-rated Restaurants:
+-Search and Filters
+-Cart Management
+-Tailwind CSS to design 
+- Higher order components -> feature of promoted label 
 
-create browser router -> react-router-dom
+
+-create browser router -> react-router-dom
+
+css writing way
+- Sass , Scss,styled-component,tailwind css , material ui 
 
 
 # Parcel
