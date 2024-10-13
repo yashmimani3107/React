@@ -7,10 +7,11 @@
 -Shimmer Effect
 -Top-rated Restaurants:
 -Search and Filters
--Cart Management
+-Cart Management -> Redux Store
 -Tailwind CSS to design 
 - Higher order components -> feature of promoted label 
-
+-React Context - logged in user information
+-contolled and uncontorlled components for collapsing all other acordian when other one open
 
 -create browser router -> react-router-dom
 

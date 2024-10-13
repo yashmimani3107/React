@@ -6,6 +6,7 @@ import RestaurantCategory from './RestaurantCategories';
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
+  const [showIndex, setShowIndex] = useState(null);
 
   useEffect(() => {
     fetchMenu();
@@ -45,8 +46,11 @@ const RestaurantMenu = () => {
       <h1 className="font-bold my=6 text-2xl">{name}</h1>
       <p className="font-bold text-lg">{cuisines?.join(",")} - {costForTwoMessage}</p>
       {
-  categories?.length > 0 && categories.map((category) => (
-    <RestaurantCategory key={category.id} data={category?.card?.card} />
+  categories?.length > 0 && categories.map((category,index) => (
+    <RestaurantCategory key={category.id} 
+                    data={category?.card?.card} 
+                    showItems={index === showIndex ? true : false} 
+                   setShowIndex={() => setShowIndex(index)} />
   ))
 }
 
