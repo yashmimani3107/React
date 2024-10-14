@@ -24,7 +24,7 @@ const Body = () => {
     console.log(json);
 
     // optional chaining to avoid errors if structure changes
-    const restaurants = json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+    const restaurants = json?.data?.cards?.[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
     setListOfRestaurant(restaurants);
     setFilteredRestaurant(restaurants); // initialize both states with full data
   };

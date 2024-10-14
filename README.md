@@ -1,19 +1,19 @@
 # Namaste React Learnings
 
-# Food ordering App
+# Food Villa App
 
--Swiggy API Integration
--React-based UI
--Shimmer Effect
--Top-rated Restaurants:
--Search and Filters
--Cart Management -> Redux Store
--Tailwind CSS to design 
+- Swiggy API Integration
+- React-based UI
+- Shimmer Effect
+- Top-rated Restaurants:
+- Search and Filters
+- Cart Management -> Redux Store
+- Tailwind CSS to design 
 - Higher order components -> feature of promoted label 
--React Context - logged in user information
--contolled and uncontorlled components for collapsing all other acordian when other one open
+- React Context - logged in user information
+- contolled and uncontorlled components for collapsing all other acordian when other one open
 
--create browser router -> react-router-dom
+- create browser router -> react-router-dom
 
 css writing way
 - Sass , Scss,styled-component,tailwind css , material ui 
@@ -61,8 +61,8 @@ import {component name } from "path";
 
 - normal js utility function / variable
 - state variable -> super powerful variable
--useState()
--useEffect
+- useState()
+- useEffect
 
 whenever a state variable updates react will re render ui components
 
@@ -78,6 +78,14 @@ rafce shortcut in vscode to create component
  dont use anchor to move to another page since reloads the whole page insted use links from react-router-dom library
 
 
-#two type of routing 
--client side 
--server side
+# two type of routing 
+- client side 
+- server side
+
+# Redux
+- Install @reduxjs/toolkit and react-redux
+- build our redux store
+- connect our store to our app
+- create slice
+- dispatch (Action)
+- Selector
